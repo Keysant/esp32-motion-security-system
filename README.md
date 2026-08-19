@@ -56,7 +56,3 @@ Since I am just starting out and don't know how to code yet, I used AI to genera
 4. Open VS Code, navigate to the project folder, and run the Python script:
    ```powershell
    python main.py
-
-https://github.com/user-attachments/assets/110d104c-c62e-48d0-adcc-b656d6599c46
-
-
