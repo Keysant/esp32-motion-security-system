@@ -56,3 +56,5 @@ Since I am just starting out and don't know how to code yet, I used AI to genera
 4. Open VS Code, navigate to the project folder, and run the Python script:
    ```powershell
    python main.py
+<img width="4032" height="3024" alt="Board Design" src="https://github.com/user-attachments/assets/a13abeb7-e2be-451a-b7ec-e45352f67971" />
+
