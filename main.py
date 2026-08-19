@@ -1,34 +1,3 @@
-"""
-============================================================================
-Motion-Activated Security System — Laptop Application (Python)
-Library: OpenCV (cv2) + pyserial
-
-Pipeline:
-  1. Open the default webcam.
-  2. Convert each frame to grayscale and apply a Gaussian blur.
-  3. Compute frame-differencing motion detection (cv2.absdiff between the
-     current and previous processed frame), threshold it, and confirm
-     motion via contour area (filters out single-pixel sensor noise).
-  4. Send '1' over USB Serial to the ESP32 if motion crosses the area
-     threshold this frame, otherwise send '0'.
-  5. Display a live video window with an overlay showing motion status
-     and the serial connection state.
-
-Install dependencies:
-    pip install opencv-python pyserial
-
-Usage:
-    python laptop_app.py [COM_PORT]
-    e.g.  python laptop_app.py COM5
-
-    If no port is given, it defaults to DEFAULT_COM_PORT below.
-    Find your ESP32's port in Device Manager (Windows) -> Ports (COM & LPT),
-    or Arduino IDE -> Tools -> Port.
-
-Quit the video window with 'q' or ESC.
-============================================================================
-"""
-
 import sys
 import time
 
