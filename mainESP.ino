@@ -6,7 +6,7 @@ const uint8_t PIN_LDR       = 34;   // ADC1_CH6, input-only pin
 
 // ---------------------------- Tunable Constants -----------------------------
 const int      DARK_THRESHOLD    = 1250;  // Calibrated: dark ~800, light ~1700
-const uint32_t ALARM_DURATION_MS = 30000; // 30 seconds LEDs stay on after motion
+const uint32_t ALARM_DURATION_MS = 10000; // 10 seconds LEDs stay on after motion
 const uint32_t DEBOUNCE_MS       = 50;    // Button debounce window
 const uint32_t TELEMETRY_PERIOD_MS = 1000; // How often to print status
 const uint32_t BLINK_INTERVAL_MS  = 300;  // How fast Red/Blue alternate in BLINK mode
