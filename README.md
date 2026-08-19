@@ -22,10 +22,10 @@ systems and computer vision fundamentals.
 
   ## Features
   
-- **Real-time motion detection** using OpenCV frame differencing (grayscale + Gaussian blur + `cv2.absdiff`)
-- **Serial communication** between laptop and ESP32 over USB (115200 baud)
-- **Light-aware triggering** — alarm only activates when the room is dark, using an LDR voltage divider
-- **Non-blocking firmware** — all timing (debounce, alarm duration, blink interval) uses `millis()`, no `delay()`
-- **Two LED display modes** — solid or alternating blink, cycled via a physical button
-- **Live telemetry** — ESP32 prints sensor readings and system state to Serial Monitor once per second
-- **Visual feedback** — live webcam window with motion status overlay and bounding boxes around detected movement
+- **Real-time motion detection**: using OpenCV frame differencing (grayscale + Gaussian blur + `cv2.absdiff`)
+- **Serial communication**: between laptop and ESP32 over USB (115200 baud)
+- **Light-aware triggering**: alarm only activates when the room is dark, using an LDR voltage divider
+- **Non-blocking firmware**: all timing (debounce, alarm duration, blink interval) uses `millis()`, no `delay()`
+- **Two LED display modes**: solid or alternating blink, cycled via a physical button
+- **Live telemetry**: ESP32 prints sensor readings and system state to Serial Monitor once per second
+- **Visual feedback**: live webcam window with motion status overlay and bounding boxes around detected movement
