@@ -22,7 +22,7 @@ Since I am just starting out and don't know how to code yet, I used AI to genera
 * **Webcam Motion Detection:** The Python script uses OpenCV on the laptop to watch the webcam and detect when something moves in the frame.
 * **Night-Only Trigger:** Uses a photoresistor (LDR) light sensor so the lights only turn on if the room is actually dark.
 * **Multi-Mode Button:** Pressing the physical push button changes how the LEDs behave, such as switching between solid light and an alternating flashing mode.
-* **30-Second Auto Shutoff:** If no motion is detected for 30 seconds, the lights turn off automatically to save power.
+* **30-Second Auto Shutoff:** If no motion is detected for 10 seconds, the lights turn off automatically to save power.
 * **Serial Communication:** The laptop sends simple signals ('1' for motion, '0' for no motion) to the ESP32 over a USB cable at 115200 baud.
 * **Live Video Feed:** Displays a live camera window on the laptop screen with a box drawn around whatever is moving.
 
