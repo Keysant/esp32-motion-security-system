@@ -1,31 +1,58 @@
-# esp32-motion-security-system
+# ESP32 Motion Security System
+
+A beginner project combining a laptop webcam with an ESP32 microcontroller to build a motion-triggered security light.
 
 ## About This Project
 
-This was my first hardware + software integration project, built to learn embedded 
-systems and computer vision fundamentals.
+This was my first project working with hardware and software together. My main goal was to learn how embedded systems work and how a laptop can talk to a microcontroller like the ESP32.
 
-**What I did:**
-- Designed the full system architecture (how the laptop and ESP32 divide responsibilities 
-  and communicate over serial)
-- Selected, wired, and assembled all hardware (LEDs, button, photoresistor voltage divider, 
-  ESP32)
-- Debugged wiring issues (button pin configuration, LED polarity, COM port conflicts)
-- Calibrated sensor thresholds (DARK_THRESHOLD, MOTION_AREA_THRESH) against real-world 
-  readings
-- Iterated on the design (removed a component, changed the button's function from a master 
-  switch to a mode-cycling control) based on my own testing
+Since I am just starting out and don't know how to code yet, I used AI to generate the C++ firmware and the Python code. My focus was on designing how the system should work, assembling the physical hardware circuit, and troubleshooting the hardware and settings until everything worked in real life.
 
-**AI-assisted:**
-- Initial code implementation (ESP32 firmware and Python/OpenCV script) was generated 
-  with AI assistance, then modified and debugged by me as the hardware and design evolved.
+### What I Worked On:
+* **System Design:** Figured out how the project should work by letting the laptop do the heavy lifting (webcam motion detection) and telling the ESP32 when to turn on the lights.
+* **Hardware Assembly:** Wired up an ESP32 on a breadboard with LEDs, resistors, a push button, and a photoresistor (light sensor).
+* **Hardware Debugging:** Fixed physical issues along the way, like fixing button wiring, getting LED polarity right, and resolving USB COM port conflicts on Windows.
+* **Sensor Tuning:** Tested the light sensor in different room lighting conditions to find the right threshold values so the LEDs only turn on when it is dark.
+* **Project Iteration:** Changed the design while testing, such as changing the button from a basic power switch to a button that switches between different LED light modes.
 
-  ## Features
-  
-- **Real-time motion detection**: using OpenCV frame differencing (grayscale + Gaussian blur + `cv2.absdiff`)
-- **Serial communication**: between laptop and ESP32 over USB (115200 baud)
-- **Light-aware triggering**: alarm only activates when the room is dark, using an LDR voltage divider
-- **Non-blocking firmware**: all timing (debounce, alarm duration, blink interval) uses `millis()`, no `delay()`
-- **Two LED display modes**: solid or alternating blink, cycled via a physical button
-- **Live telemetry**: ESP32 prints sensor readings and system state to Serial Monitor once per second
-- **Visual feedback**: live webcam window with motion status overlay and bounding boxes around detected movement
+---
+
+## Features
+
+* **Webcam Motion Detection:** The Python script uses OpenCV on the laptop to watch the webcam and detect when something moves in the frame.
+* **Night-Only Trigger:** Uses a photoresistor (LDR) light sensor so the lights only turn on if the room is actually dark.
+* **Multi-Mode Button:** Pressing the physical push button changes how the LEDs behave, such as switching between solid light and an alternating flashing mode.
+* **30-Second Auto Shutoff:** If no motion is detected for 30 seconds, the lights turn off automatically to save power.
+* **Serial Communication:** The laptop sends simple signals ('1' for motion, '0' for no motion) to the ESP32 over a USB cable at 115200 baud.
+* **Live Video Feed:** Displays a live camera window on the laptop screen with a box drawn around whatever is moving.
+
+---
+
+## Hardware & Components Used
+
+* ESP32 Microcontroller
+* Breadboard & Jumper Wires
+* LEDs & Resistors
+* Photoresistor (LDR Light Sensor)
+* Push Button
+* Laptop with Webcam
+
+---
+
+## Software & Tools Used
+
+* **Arduino IDE:** To upload the code to the ESP32.
+* **VS Code & Python:** To run the motion detection script.
+* **OpenCV & PySerial:** Python libraries for the camera feed and USB connection.
+* **AI Assistance:** Used to write the C++ and Python code.
+
+---
+
+## How to Run It
+
+1. Wire up the ESP32 circuit on a breadboard with the LEDs, button, and photoresistor.
+2. Open the C++ code in Arduino IDE, select your ESP32 board and COM port, and upload it.
+3. Close the Arduino Serial Monitor so the port is free.
+4. Open VS Code, navigate to the project folder, and run the Python script:
+   ```powershell
+   python main.py
